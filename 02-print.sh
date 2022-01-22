@@ -32,3 +32,9 @@ echo -e "\e[4;31mRED\e[4;32mGREEN\e[4;33mYELLOW\e[4;34mBLUE\e[4;35mMAGENTA\e[4;3
 echo -e "\e[2;31mRED\e[2;32mGREEN\e[2;33mYELLOW\e[2;34mBLUE\e[2;35mMAGENTA\e[2;36mCYAN\e[0m"
 echo -e "\e[3;31mRED\e[3;32mGREEN\e[3;33mYELLOW\e[3;34mBLUE\e[3;35mMAGENTA\e[3;36mCYAN\e[0m"
 
+# There are two esc sequences -
+# New Line - \n
+# New Tab - \t
+
+echo -e "This is first Line\nThis is Second Line"
+echo -e "Word1\t\tWord2"
