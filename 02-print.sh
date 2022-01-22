@@ -21,3 +21,10 @@ echo Hello World!!
 # CYAN        36
 
 echo -e "\e[31mRED\e[32mGREEN\e[33mYELLOW\e[34mBLUE\e[35mMAGENTA\e[36mCYAN\e[0m"
+
+# The same color can be print with more Brightness and BOLD color
+echo -e "\e[1;31mRED\e[1;32mGREEN\e[1;33mYELLOW\e[1;34mBLUE\e[1;35mMAGENTA\e[1;36mCYAN\e[0m"
+echo -e "\e[4;31mRED\e[4;32mGREEN\e[4;33mYELLOW\e[4;34mBLUE\e[4;35mMAGENTA\e[4;36mCYAN\e[0m"
+echo -e "\e[2;31mRED\e[2;32mGREEN\e[2;33mYELLOW\e[2;34mBLUE\e[2;35mMAGENTA\e[2;36mCYAN\e[0m"
+echo -e "\e[3;31mRED\e[3;32mGREEN\e[3;33mYELLOW\e[3;34mBLUE\e[3;35mMAGENTA\e[3;36mCYAN\e[0m"
+
