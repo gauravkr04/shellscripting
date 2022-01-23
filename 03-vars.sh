@@ -14,8 +14,8 @@ echo student_name = ${student_name}
 # We need to put the output message in quotes in case it has spaces
 
 # Hard Coded Assignment
-#DATE=2022-01-23
-#echo Good Morning, Today date is $DATE
+DATE=2022-01-23
+echo Good Morning, Today date is $DATE
 
 #Command Substitution
 DATE=$(date +%F)
