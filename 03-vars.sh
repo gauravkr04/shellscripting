@@ -37,3 +37,14 @@ readonly a=100
 echo $a
 a=200
 echo $a
+
+# Scalar Variable - can hold only one value
+b=10
+echo $b
+b=20
+echo $b
+
+# Array Variable
+c=(10,20)
+echo $c[0]
+echo $c[1]
