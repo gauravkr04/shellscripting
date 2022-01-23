@@ -50,3 +50,8 @@ c=(10 20)
 echo ${c[0]}
 echo ${c[1]}
 echo ${b[0]}
+
+#Local and Global Variable
+# Trying to access a variable from command line
+
+echo Course_Name = $COURSE_NAME
