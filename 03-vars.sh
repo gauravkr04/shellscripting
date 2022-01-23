@@ -55,3 +55,4 @@ echo ${b[0]}
 # Trying to access a variable from command line
 
 echo Course_Name = $COURSE_NAME
+
