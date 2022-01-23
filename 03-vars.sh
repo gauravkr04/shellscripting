@@ -15,8 +15,8 @@ echo student_name = ${student_name}
 
 # Hard Coded Assignment
 DATE = 2022-01-23
-echo "Good Morning, Today's date is $DATE"
+echo Good Morning, Today date is $DATE
 
 #Command Substitution
 DATE = $(date +%F)
-echo "Good Morning, Today's date is $DATE"
+echo Good Morning, Today date is $DATE
