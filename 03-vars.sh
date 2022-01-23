@@ -46,6 +46,6 @@ echo $b
 echo ${b[0]}
 
 # Array Variable
-c=(10,20)
-#echo ${c[0]}
+c=(10 20)
+echo ${c[0]}
 echo ${c[1]}
