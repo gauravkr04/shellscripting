@@ -22,8 +22,8 @@ DATE=$(date +%F)
 echo Good Morning, Today date is $DATE
 
 # Arithmatic Substitution
-VAR1 = $((2+3+4-1/6-1))
+VAR1=$((2+3+4-1/6-1))
 echo The output of Arithmatic expression is $VAR1
 
-VAR2 = TEST
+VAR2=TEST
 echo $VAR2
