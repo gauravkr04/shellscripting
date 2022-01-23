@@ -25,5 +25,15 @@ echo Good Morning, Today date is $DATE
 VAR1=$((2+3+4-1/6-1))
 echo The output of Arithmatic expression is $VAR1
 
-VAR2=TEST
-echo $VAR2
+#Variable name can have only a-z, A-Z, 0-9, Underscore
+# Special Character is not allowed
+# Variable name should not start with a number
+# it can start with a underscore
+# Variable by default dont have a datatype, everything is String
+# in LINUX/UNIX, variable names generally goes in CAPS whereas in Java, it is Camel Case.
+
+# ReadOnly Variable
+a=100
+readonly a
+a=200
+echo $a
