@@ -34,6 +34,6 @@ echo The output of Arithmatic expression is $VAR1
 
 # ReadOnly Variable
 a=100
-$ (readonly a)
+$ readonly a
 a=200
 echo $a
