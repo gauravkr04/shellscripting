@@ -43,6 +43,7 @@ b=10
 echo $b
 b=20
 echo $b
+echo ${b[0]}
 
 # Array Variable
 c=(10,20)
