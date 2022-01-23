@@ -33,7 +33,7 @@ echo The output of Arithmatic expression is $VAR1
 # in LINUX/UNIX, variable names generally goes in CAPS whereas in Java, it is Camel Case.
 
 # ReadOnly Variable
-a=100
-$ readonly a
+readonly a=100
+echo $a
 a=200
 echo $a
