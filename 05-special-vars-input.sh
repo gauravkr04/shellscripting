@@ -7,10 +7,10 @@
 # $* , $@ - All Arguments
 # $# - Number of Arguments
 
-echo $0
-echo $1
-echo $2
-echo $3
-echo $#
-echo $*
-echo $@
+echo $0  # Script Name
+echo $1  # First Argument
+echo $2  # Second Argument
+echo $3  # Third Argument
+echo $#  # Number of Arguments
+echo $*  # Print all Arguments
+echo $@  # Print all Arguments
