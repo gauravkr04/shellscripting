@@ -11,6 +11,6 @@ if [ $a != "abc" ]; then
   echo NOTOK
 fi
 
-if [ -z $b]; then
+if [ -z $b ]; then
   echo b is empty/not declared variable
 fi
