@@ -81,7 +81,7 @@ chown roboshop:roboshop /home/roboshop/ -R &>>$LOG_FILE
 
 # Update SystemD file with correct IP addresses using DNS
 echo "Update SystemD File"
-sed -i -e 's/MONGO_DNSNAME/mongo.roboshop.internal/' /home/roboshop/catalogue/systemd.sevice &>>$LOG_FILE
+sed -i -e 's/MONGO_DNSNAME/mongo.roboshop.internal/' /home/roboshop/catalogue/systemd.service &>>$LOG_FILE
 
 # Lets set up the service with systemctl.
 echo "Set Catalogue SystemCTL file"
