@@ -36,9 +36,15 @@ echo "Installing frontend"
 #
 #```
 
+# Define a Log File
+LOG_FILE=/tmp/roboshop.log
+# clear the logfile
+rm -f $LOG_FILE
 
 echo "Installing NGINX"
-yum install nginx -y >>/tmp/roboshop.log
+yum install nginx -y &>>$LOG_FILE
 
 echo "Download frontend Content"
-curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" >>/tmp.roboshop.log
+curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" &>>$LOG_FILE
+
+#cd /usr/share/nginx/html
