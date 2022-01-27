@@ -65,9 +65,16 @@ echo "Extract Catalouge Code"
 cd /tmp/ &>>$LOG_FILE
 unzip -o catalogue.zip &>>$LOG_FILE
 
+echo "Clean up Old Catalogue"
+rm -rf /home/roboshop/catalogue &>>$LOG_FILE
+
 echo "Copy Catalouge Content"
 cp -r catalogue-main /home/roboshop/catalogue &>>$LOG_FILE
 
 echo "Install NodeJS Dependencies"
 cd /home/roboshop/catalogue &>>$LOG_FILE
 npm install &>>$LOG_FILE
+
+# all node js files will need to run as user but not root
+echo "Change Owner to roboshop"
+chown roboshop:roboshop /home/roboshop
