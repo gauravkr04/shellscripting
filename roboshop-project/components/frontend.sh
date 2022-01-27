@@ -37,4 +37,5 @@ echo "Installing frontend"
 #```
 
 
-yum install nginx -y
+echo "Installing NGINX"
+yum install nginx -y >/tmp/roboshop.log
