@@ -32,3 +32,10 @@ _sed -i -e '1 a New World' /tmp/passed_
 #### To replace the line with Hello Universe where the word World present
 _sed -i -e '/World/ c Hello Universe' /tmp/passed_
 
+## To Interrupt on Shell prompt - CTL + C
+## To comment the selected text - CTL + /
+## To come out from Mongo Shell - CTL + D
+## To clear screen on Shell Prompt - CTL + L
+
+
+
