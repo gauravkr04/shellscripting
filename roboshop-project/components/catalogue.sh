@@ -78,3 +78,17 @@ npm install &>>$LOG_FILE
 # all node js files will need to run as user but not root
 echo "Change Owner to roboshop"
 chown roboshop:roboshop /home/roboshop/ -R &>>$LOG_FILE
+
+# Update SystemD file with correct IP addresses using DNS
+echo "Update SystemD File"
+sed -i -e 's/MONGO_DNSNAME/mongo.roboshop.internal' /home/roboshop/catalogue/systemd.sevice &>>$LOG_FILE
+
+# Lets set up the service with systemctl.
+echo "Set Catalogue SystemCTL file"
+mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service &>>$LOG_FILE
+
+# Enable and Start the service
+echo "Start Catalogue Server"
+systemctl daemon-reload &>>$LOG_FILE
+systemctl start catalogue &>>$LOG_FILE
+systemctl enable catalogue &>>$LOG_FILE
