@@ -77,4 +77,4 @@ npm install &>>$LOG_FILE
 
 # all node js files will need to run as user but not root
 echo "Change Owner to roboshop"
-chown roboshop:roboshop /home/roboshop
+chown roboshop:roboshop /home/roboshop/ -R &>>$LOG_FILE
