@@ -41,6 +41,7 @@ LOG_FILE=/tmp/roboshop.log
 # clear the logfile
 rm -f $LOG_FILE
 
+#To Install Nginx.
 echo "Installing NGINX"
 yum install nginx -y &>>$LOG_FILE
 
