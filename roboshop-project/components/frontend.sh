@@ -36,10 +36,8 @@ echo "Installing frontend"
 #
 #```
 
-# Define a Log File
-LOG_FILE=/tmp/roboshop.log
-# clear the logfile
-rm -f $LOG_FILE
+# importing common file in this file
+source components/common.sh
 
 #To Install Nginx.
 echo "Installing NGINX"
