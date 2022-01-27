@@ -90,5 +90,5 @@ mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.servic
 # Enable and Start the service
 echo "Start Catalogue Server"
 systemctl daemon-reload &>>$LOG_FILE
-systemctl start catalogue &>>$LOG_FILE
 systemctl enable catalogue &>>$LOG_FILE
+systemctl start catalogue &>>$LOG_FILE
