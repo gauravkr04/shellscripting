@@ -9,7 +9,7 @@
 # Receiving the first argument as Instance Name
 INSTANCE_NAME=$1
 
-if[ -z "${INSTANCE_NAME}" ]; then
+if[ -z $INSTANCE_NAME ]; then
   echo -e "\e[1,31mThe Instance Name has not been passed\e[0m"
   exit
 fi
