@@ -24,7 +24,7 @@ else
   echo $AMI_ID
 fi
 
-aws ec2 run-instances --image-id $AMI_ID --instance-type t3.micro --output text
+aws ec2 run-instances --image-id $AMI_ID --instance-type t3.micro --output text --tag-specification "ResourceType=instance,Tags=[{Key=Name,Value=$INSTANCE_NAME]}"
 
 
 
