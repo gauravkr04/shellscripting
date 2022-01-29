@@ -25,11 +25,15 @@ else
 fi
 
 # describe-instance to find whether a particular instance is up and running or not
-
 PRIVATE_IP=$(aws ec2 describe-instances --filters Name=tag:Name,Values=$INSTANCE_NAME --query 'Reservations[*].Instances[*].PrivateIpAddress' --output text)
 
 if [ -z "${PRIVATE_IP}" ]; then
-  aws ec2 run-instances --image-id $AMI_ID --instance-type t3.micro --output text --tag-specification "ResourceType=instance,Tags=[{Key=Name,Value=$INSTANCE_NAME}]"
+  SEC_GRP=$( aws ec2 describe-security-groups --filters Name=group-name,Values=allow-all-ports --query SecurityGroups[*].GroupId --output text)
+  if [ -z "${SEC_GRP}" ]; then
+    echo -e "\e[1;31mSecurity Group allow-all-ports does not exist; hence exiting\e[0m"
+    exit
+  fi
+  aws ec2 run-instances --image-id $AMI_ID --instance-type t3.micro --output text --tag-specification "ResourceType=instance,Tags=[{Key=Name,Value=$INSTANCE_NAME}]" "ResourceType=spot-instances-request,Tags=[{Key=Name,Value=$INSTANCE_NAME}]" --instance-market-options "MarketType=spot,SpotOptions={SpotInstanceType=persistent,InstanceInterruptionBehavior=stop}" --security-group-ids=${SEC_GRP}
 else
   echo -e "\e[1;33mThe Instance $INSTANCE_NAME is already running\e[0m"
   exit
