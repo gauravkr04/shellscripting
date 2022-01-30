@@ -46,16 +46,17 @@ IPADDRESS=$(aws ec2 describe-instances --filters Name=tag:Name,Values=$INSTANCE_
 
 # Create a json file for DNS record
 rm -rf /tmp/record.json
+
 echo '{
-        "Comment": "CREATE/DELETE/UPSERT a record",
-        "Changes": [{
-        "Action": "UPSERT",
-                   "ResourceRecordSet": {
-                              "Name": "DNSNAME",
-                              "Type": "A",
-                              "TTL": 300,
-                              "ResourceRecords": [{ "Value": "IPADDRESS"}]
-       }}]
+            "Comment": "CREATE/DELETE/UPSERT a record ",
+            "Changes": [{
+            "Action": "UPSERT",
+                        "ResourceRecordSet": {
+                                    "Name": "DNSNAME",
+                                    "Type": "A",
+                                    "TTL": 300,
+                                 "ResourceRecords": [{ "Value": IPADDRESS}]
+}}]
 }' | sed -e "s/DNSNAME/$INSTANCE_NAME/" -e "s/IPADDRESS/$IPADDRESS/" >/tmp/record.json
 
 # Retrieve the Hosted Zone ID
