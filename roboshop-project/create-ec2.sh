@@ -50,7 +50,7 @@ rm -rf /tmp/record.json
 echo '{
             "Comment": "CREATE/DELETE/UPSERT a record ",
             "Changes": [{
-            "Action": "CREATE",
+            "Action": "UPSERT",
                         "ResourceRecordSet": {
                                     "Name": "DNSNAME",
                                     "Type": "A",
