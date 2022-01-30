@@ -7,7 +7,7 @@
 # IAM for AWS - create users - aws configure
 
 # Create a log file
-INS_CREATE_LOG_FILE = /tmp/instance-create.log
+INS_CREATE_LOG_FILE=/tmp/instance-create.log
 rm -rf $INS_CREATE_LOG_FILE
 
 # Receiving the first argument as Instance Name
