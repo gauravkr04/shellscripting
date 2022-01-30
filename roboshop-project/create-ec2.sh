@@ -47,7 +47,7 @@ IPADDRESS=$(aws ec2 describe-instances --filters Name=tag:Name,Values=$INSTANCE_
 # Create a json file for DNS record
 rm -rf /tmp/record.json
 echo '{
-        "Comment": "CREATE/DELETE/UPSERT a record"
+        "Comment": "CREATE/DELETE/UPSERT a record",
         "Changes": [{
         "Action": "UPSERT",
                    "ResourceRecordSet": {
