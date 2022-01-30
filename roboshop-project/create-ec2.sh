@@ -40,6 +40,7 @@ fi
 
 IPADDRESS=$(aws ec2 describe-instances --filters Name=tag:Name,Values=$INSTANCE_NAME --query 'Reservations[*].Instances[*].PrivateIpAddress' --output text)
 
+# Create a json file for DNS record
 rm -rf /tmp/record.json
 echo '{
         "Comment": "CREATE/DELETE/UPSERT a record"
@@ -52,6 +53,16 @@ echo '{
                               "ResourceRecords": [{ "Value": "IPADDRESS"}]
        }}]
 }' | sed -e "s/DNSNAME/$INSTANCE_NAME/" -e "s/IPADDRESS/$IPADDRESS/" >/tmp/record.json
+
+# Retrieve the Hosted Zone ID
+ZONE_ID=$(aws route53 list-hosted-zones --query "HostedZones[*].{name:Name,id:Id}" --output text |grep roboshop.internal | awk '{print$1'} | awk -F / '{print$3}')
+
+if [ -z "${ZONE_ID}" ]; then
+  echo "Hosted Zone ID is not defined. Please create a new one in the console"
+  exit
+else
+  
+aws route53 change-resource-record-sets --hosted-zone-id $ZONE_ID --change-batch-file:///tmp/record.json --output text
 
 
 
